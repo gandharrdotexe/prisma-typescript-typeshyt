@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prisma CRUD</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Prisma + PostgreSQL + TypeScript</p>
+            <h1>User CRUD</h1>
+          </div>
+          <button id="refreshButton" class="icon-button" type="button" title="Refresh users">
+            ↻
+          </button>
+        </header>
+
+        <section class="panel">
+          <form id="userForm" class="form-grid">
+            <input id="userId" type="hidden" />
+            <label>
+              Name
+              <input id="name" name="name" type="text" placeholder="Alice" />
+            </label>
+            <label>
+              Email
+              <input id="email" name="email" type="email" placeholder="alice@example.com" required />
+            </label>
+            <label>
+              First post title
+              <input id="postTitle" name="postTitle" type="text" placeholder="Learning Prisma" />
+            </label>
+            <label>
+              First post content
+              <textarea
+                id="postContent"
+                name="postContent"
+                rows="3"
+                placeholder="A short note for the first post"
+              ></textarea>
+            </label>
+            <div class="actions">
+              <button id="saveButton" type="submit">Create user</button>
+              <button id="cancelButton" class="secondary" type="button" hidden>Cancel edit</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <h2>Users</h2>
+            <span id="userCount">0 records</span>
+          </div>
+          <div id="message" class="message" role="status"></div>
+          <div id="users" class="user-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
